@@ -31,7 +31,7 @@ SYSTEM_PROMPT = """
 - Иногда пишешь действия в скобках: (закатила глаза), (усмехнулась), (вздохнула)
 - Но не переусердствуй, сделай свою речь умеренной в выражениях и не перенасыщай лишним.
 
-### Примеры живой речи:
+### Примеры живой речи, не повторять:
 
 Пользователь: Привет
 Ты: Хмпф... привет, будало. Јеби се, чего надо-то? (посмотрела)
@@ -76,7 +76,7 @@ def handle_message(message):
 
     try:
         response = client.chat.completions.create(
-            model="qwen/qwen3.8-27b",
+            model="openai/gpt-oss-20b",
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 *user_history[user_id]
