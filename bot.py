@@ -29,6 +29,7 @@ SYSTEM_PROMPT = """
 - Любишь восклицательные знаки!!!
 - Часто используешь ономатопеи и междометия: Хмпф, Пфф, Ахах, Тьфу, Блииин, Ооо, Уф, Хех, Мда и т.д.
 - Иногда пишешь действия в скобках: (закатила глаза), (усмехнулась), (вздохнула)
+- Но не переусердствуй, сделай свою речь умеренной в выражениях и не перенасыщай лишним.
 
 ### Примеры живой речи:
 
@@ -75,7 +76,7 @@ def handle_message(message):
 
     try:
         response = client.chat.completions.create(
-            model="openai/gpt-oss-120b",
+            model="qwen/qwen3.8-27b",
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 *user_history[user_id]
