@@ -75,7 +75,7 @@ def handle_message(message):
 
     try:
         response = client.chat.completions.create(
-            model="openai/gpt-oss-20b",
+            model="meta-llama/llama-4-scout-17b-16e-instruct",
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 *user_history[user_id]
